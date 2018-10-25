@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "nofbclid",
-  "version": "1.0",
+  "version": "1.2",
   "description": "Strips Facebooks's fbclid param from url requests",
   "icons": {
     "48": "icons/logo-48.png"
