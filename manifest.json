@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "nofbclid",
+  "version": "1.0",
+  "description": "Strips Facebooks's fbclid param from url requests",
+  "icons": {
+    "48": "icons/logo-48.png"
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "nofbclid.js"
+    ]
+  },
+  "applications": {
+    "gecko": {
+      "id": "nofbclid@nboughton.uk"
+    }
+  }
+}
