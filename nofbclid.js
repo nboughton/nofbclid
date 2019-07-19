@@ -1,8 +1,18 @@
+const strip = ["fbclid", "igshid"]
+
 function fbclidStrip(req) {
   const url = new URL(req.url)
-  const cid = url.searchParams.get("fbclid")
-  if (cid) {
-    url.searchParams.delete("fbclid")
+  let edit = false
+
+  for (let s in strip) {
+    let id = url.searchParams.get(s)
+    if (id) {
+      url.searchParams.delete(s)
+      edit = true
+    }
+  }
+
+  if (edit) {
     return {
       redirectUrl: url.href
     }
