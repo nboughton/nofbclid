@@ -1,13 +1,10 @@
-const strip = ["fbclid", "igshid"]
-
 function fbclidStrip(req) {
   const url = new URL(req.url)
   let edit = false
 
-  for (let s in strip) {
-    let id = url.searchParams.get(s)
-    if (id) {
-      url.searchParams.delete(s)
+  for (const param of ["fbclid", "igshid"]) { // params to delete
+    if (url.searchParams.get(param)) {
+      url.searchParams.delete(param)
       edit = true
     }
   }
